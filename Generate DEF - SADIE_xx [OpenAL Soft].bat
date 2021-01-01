@@ -4073,5 +4073,7 @@ FOR /D %%G in (*) DO (
   echo [ 22,  0 ] = wave ^(0^) : "./SADIE_!HRIRFolderID!/!HRIRFolderID!_HRIR_WAV/96K_24bit/azi_0,0_ele_90,0.wav" left
   echo            + wave ^(1^) : "./SADIE_!HRIRFolderID!/!HRIRFolderID!_HRIR_WAV/96K_24bit/azi_0,0_ele_90,0.wav" right
 ) >"%%G [OpenAL Soft].def"
+IF EXIST "Resources [OpenAL Soft].def" (del "Resources [OpenAL Soft].def")
+IF EXIST "Output.def" (del "Output.def")
 echo Badda-bing badda-boom.
 pause

@@ -46,5 +46,7 @@ FOR %%G in (*.sofa) DO (
   echo [ * ] = sofa : "./%%G" mono
 
 ) >"%%~nG [OpenAL Soft].def"
+IF EXIST "Resources [OpenAL Soft].def" (del "Resources [OpenAL Soft].def")
+IF EXIST "Output.def" (del "Output.def")
 echo Badda-bing badda-boom.
 pause

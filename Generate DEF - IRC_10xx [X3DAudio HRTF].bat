@@ -425,5 +425,7 @@ FOR /D %%G in (*) DO (
   echo [ 12,  0 ] = wave ^(0^) : "./%%G/RAW/WAV/%%G_R/%%G_R_R0195_T000_P090.wav"
   echo            + wave ^(1^) : "./%%G/RAW/WAV/%%G_R/%%G_R_R0195_T000_P090.wav"
 ) >"%%G [X3DAudio HRTF].def"
+IF EXIST "Resources [X3DAudio HRTF].def" (del "Resources [X3DAudio HRTF].def")
+IF EXIST "Output.def" (del "Output.def")
 echo Badda-bing badda-boom.
 pause
