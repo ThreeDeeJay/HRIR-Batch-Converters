@@ -20,11 +20,15 @@ Converts all the .SOFA files in the script folder to OpenAL Soft .MHR files (441
 # SOFA to WAV
 Converts all the .SOFA files in the script folder to HeSuVi .WAV files files (44100hz and 48000hz) and opens the output/ and hrir/ folders for easy drag and drop installation.
 
+# Resample
+Generates 44.hkhz WAV file for HeSuVi WAV files, if missing.
+
 # Contact
-For more updates, troubleshooting or contribution, join the discussion at the [3D Game Audio Discord server](https://kutt.it/U3DAMChat).  
+For more updates, troubleshooting or contribution, join the discussion at the [Binaural Audio Discord server](https://kutt.it/U3DAMChat).  
 
 # Credits:  
 [kcat](https://github.com/kcat) - [makehrtf/makemhr](https://github.com/kcat/openal-soft/tree/e0097c18b82d5da37248c4823fde48b6e0002cdd/utils/makemhr)  
 [Matt Gore](https://sourceforge.net/u/jak33/profile/), [Jaakko Pasanen](https://sourceforge.net/u/jaakkopasanen/profile/) - [SOFA to HeSuVi conversion setup](https://sourceforge.net/p/hesuvi/wiki/How-To%20Record%20Impulse%20Responses%20Digitally/)  
 [FFmpeg team](https://ffmpeg.org/developer.html) - [FFmpeg](https://ffmpeg.org/)  
 [Christian Hoene](https://github.com/hoene) - [libmysofa](https://github.com/hoene/libmysofa)  
+[Chris Bagwell](http://www.cnpbagwell.com/) - [SoX](http://sox.sourceforge.net/)
