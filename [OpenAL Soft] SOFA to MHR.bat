@@ -26,9 +26,9 @@ if exist *.sofa (
 		echo Generating "!HRIRFolderID2!-48000.mhr"
 		Resources\makemhr.exe     -r 48000 -d sphere -i "%%i" -o "Output\!HRIRFolderID2!\!HRIRFolderID2!-48000.mhr"
 		echo.
-
-
-
+		echo Generating "!HRIRFolderID2!-96000.mhr"
+		Resources\makemhr.exe     -r 96000 -d sphere -i "%%i" -o "Output\!HRIRFolderID2!\!HRIRFolderID2!-96000.mhr"
+		echo.
 
 		)
 

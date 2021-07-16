@@ -11,11 +11,11 @@ Note: These scripts are intended for the listed HRIRs since it generates a templ
 
 # DEF to MHR
 Converts Definition files (.DEF) into .MHR files compatible with OpenAL Soft or X3DAudio HRTF, depending on the script.  
-- For OpenAL Soft, it generates 44100hz and 48000hz .MHR files.
+- For OpenAL Soft, it generates 44100hz, 48000hz and 96000hz .MHR files.
 - For X3DAudio HRTF, it generates 32000hz, 44100hz, 48000hz and a 96000hz .MHR files.
 
 # SOFA to MHR
-Converts all the .SOFA files in the script folder to OpenAL Soft .MHR files (44100hz and 48000hz)
+Converts all the .SOFA files in the script folder to OpenAL Soft .MHR files (44100hz, 48000hz and 96000hz)
 
 # SOFA to WAV
 Converts all the .SOFA files in the script folder to HeSuVi .WAV files files (44100hz and 48000hz) and opens the output/ and hrir/ folders for easy drag and drop installation.
