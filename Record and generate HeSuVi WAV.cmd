@@ -10,6 +10,14 @@ SetLocal EnableDelayedExpansion
 
 Set Normalization=-6
 
+Color 6
+Echo WARNING: This tool is VERY EXPERIMENTAL.
+Echo It may generate empty/silent HRIRs because of a bug in the audio capture tool, which may lead to Blue Screen Of Death.
+Echo So proceed with caution and remember to open the WAV in Audacity to make sure it's not completely empty before using it.
+Pause
+color 7
+
+
 :Start
 PushD "%~dp0"
 ClS

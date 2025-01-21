@@ -85,6 +85,7 @@ If defined HRTF (
 	Set Path=%~2!HRTF!
 	Echo.
 	Echo [7m !HRTF! [0m
+	If "%~x1"==".sofa" ("%~dp0Resources\Tool\sofa-info\sofa-info.exe" "%~1")
 	If defined Frequencies (
 		FOR %%f IN (!Frequencies!) DO (
 			Set Frequency=%%f
@@ -142,11 +143,11 @@ If defined MHR (
 	Echo If there's already a alsoft.ini application/game in the game folder, you'll need to manually set default-hrtf=!MHR!
 	Pause>Nul
 	If not exist "%APPDATA%\alsoft.ini" (Copy /y Nul "%APPDATA%\alsoft.ini" >Nul)
-	Call :EditINI "%APPDATA%\alsoft.ini" "General" "channels"		"stereo"
-	Call :EditINI "%APPDATA%\alsoft.ini" "General" "stereo-mode"	"headphones"
-	Call :EditINI "%APPDATA%\alsoft.ini" "General" "hrtf"			"true"
-	Call :EditINI "%APPDATA%\alsoft.ini" "General" "hrtf-mode"		"full"
-	Call :EditINI "%APPDATA%\alsoft.ini" "General" "default-hrtf"	"!MHR!"
+	Call :EditINI "%APPDATA%\alsoft.ini" "General" "channels"				"stereo"
+	Call :EditINI "%APPDATA%\alsoft.ini" "General" "stereo-mode"			"headphones"
+	Call :EditINI "%APPDATA%\alsoft.ini" "General" "hrtf"					"true"
+	Call :EditINI "%APPDATA%\alsoft.ini" "General" "stereo-encoding"		"hrtf"
+	Call :EditINI "%APPDATA%\alsoft.ini" "General" "default-hrtf"			"!MHR!"
 	) else (
 	Echo Press any key to close this window.
 	Pause>Nul

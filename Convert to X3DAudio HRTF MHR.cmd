@@ -6,8 +6,9 @@ Set OutputFormat=.mhr
 Set Input=%*
 Set Renderer=X3DAudio HRTF
 Set DiffuseFieldEqualization=on
-SET Frequencies=22100,44100,48000
-::Leave empty to disable resampling and preserve original sample rate.
+SET Frequencies=8000,11000,11025,11100,12000,16000,18000,20000,22000,22050,22100,24000,28000,32000,44100,48000,96000
+::SET Frequencies=44100
+::If you notice any sounds playing loudly and non-spatialized (besides music), close the game and check the log to see if/which sample rate is missing and add it to the list above
 
 :Start
 PushD "%~dp0"
@@ -88,7 +89,8 @@ If defined HRTF (
 	FOR %%f IN (!Frequencies!) DO (
 		Set Frequency=%%f
 		If not exist "%~2!HRTF!\" (MkDir "%~2!HRTF!\")
-		Call :makehrtf -r !Frequency! -e !DiffuseFieldEqualization! -s !DiffuseFieldEqualization! -i "%~1" -d dataset -o "%~2!HRTF!\!HRTF!-!Frequency!!OutputFormat!"
+		REM Call :makehrtf -m -r=!Frequency! -i="%~1" -d=sphere -o="%~2!HRTF!\!HRTF!-!Frequency!!OutputFormat!"
+		Call :makehrtf -r !Frequency! -i "%~1" -d sphere -o "%~2!HRTF!\!HRTF!-!Frequency!!OutputFormat!"
 		If exist "%~2!HRTF!\!HRTF!-!Frequency!!OutputFormat!" (
 			Echo  [92m+ Generated in: %~2!HRTF!\!HRTF!-!Frequency!!OutputFormat![0m
 			Call :Install "%~2!HRTF!\!HRTF!-!Frequency!!OutputFormat!"
@@ -122,7 +124,7 @@ EXIT /B
 :Finish
 Echo.
 If exist "!Path!\hrtf" (
-	Echo Press any key to open folder to copy the !OutputFormat! files into the hrtf folder next to x3daudio1_7.dll ^(requires restarting application/game^)
+	Echo Press any key to open output folder containing the !OutputFormat! files to copy into the hrtf folder next to x3daudio1_7.dll ^(first delete the old MHR files. also, using requires restarting application/game^)
 Pause>Nul
 	Start "%WINDIR%\explorer.exe" "!Path!\hrtf"
 	) else (
